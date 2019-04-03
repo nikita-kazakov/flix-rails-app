@@ -1,0 +1,15 @@
+<h1>Movies</h1>
+
+<h2>This is a dynamic list</h2>
+
+<ul>
+  <% @movies.each do |movie| %>
+    <li><%= movie %></li>
+  <% end %>
+</ul>
+
+<h2>This is a static list:</h2>
+<ul>
+  <li>Superman</li>
+  <li>Batman</li>
+</ul>
