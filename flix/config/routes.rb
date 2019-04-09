@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   get 'movies' => 'movies#index'
   get 'movies/:id' =>'movies#show'
 
+  #Below are rails routes I do for practice
+  get 'flashdrives' => 'flashdrives#index'
+  get 'flashdrives/:id' => 'flashdrives#show'
+
 end
