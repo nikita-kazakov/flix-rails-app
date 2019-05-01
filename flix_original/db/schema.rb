@@ -12,14 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20190409222539) do
 
-  create_table "events", force: :cascade do |t|
-    t.string   "name"
-    t.string   "location"
-    t.decimal  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "flashdrives", force: :cascade do |t|
     t.string   "model"
     t.string   "color"
