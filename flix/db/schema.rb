@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190503182209) do
+ActiveRecord::Schema.define(version: 20190409222539) do
+
+  create_table "flashdrives", force: :cascade do |t|
+    t.string   "model"
+    t.string   "color"
+    t.integer  "size"
+    t.decimal  "price"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"
