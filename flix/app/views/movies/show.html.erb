@@ -21,6 +21,7 @@
   </table>
 </article>
 <p><%= link_to "All Movies", root_path %></p>
-<%=link_to "Edit Movie", edit_movie_path(@movie) %>
+<%=link_to "Edit Movie", edit_movie_path(@movie) %> |
+<%=link_to "Delete Movie", movie_path, method: :delete, data:{confirm:"Are you sure?"} %>
 
 <%=render 'footer' %>
