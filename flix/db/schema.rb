@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190409222539) do
+ActiveRecord::Schema.define(version: 20190508165447) do
 
   create_table "flashdrives", force: :cascade do |t|
     t.string   "model"
@@ -26,10 +26,14 @@ ActiveRecord::Schema.define(version: 20190409222539) do
     t.string   "title"
     t.string   "rating"
     t.decimal  "total_gross"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.text     "description"
     t.date     "released_on"
+    t.string   "cast"
+    t.string   "director"
+    t.string   "duration"
+    t.string   "image_file_name", default: ""
   end
 
 end

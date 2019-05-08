@@ -6,6 +6,7 @@
   <article>
     <header>
       <h2><%= link_to movie.title, movie_path(movie.id) %></h2>
+      <%= image_for(movie) %>
     </header>
     <p>
       <%= truncate(movie.description, length: 40, separator: ' ') %>
@@ -23,15 +24,22 @@
         <th>Total Gross:</th>
         <td><%= format_total_gross(movie) %></td>
       </tr>
+      <tr>
+        <th>Cast:</th>
+        <td><%= movie.cast %></td>
+      </tr>
+      <tr>
+        <th>Director:</th>
+        <td><%= movie.director %></td>
+      </tr>
+      <tr>
+        <th>Duration:</th>
+        <td><%= movie.duration %></td>
+      </tr>
     </table>
   </article>
 <% end %>
 
 
-<h2>This is a static list:</h2>
-<ul>
-  <li>Superman</li>
-  <li>Batman</li>
-</ul>
 
 <%=render 'footer' %>

@@ -20,6 +20,22 @@
     <%= f.number_field :total_gross %>
   </p>
   <p>
+    <%=f.label :cast %><br>
+    <%=f.text_field :cast %>
+  </p>
+  <p>
+    <%=f.label :director %><br>
+    <%=f.text_field :director %>
+  </p>
+  <p>
+    <%=f.label :duration %> <br>
+    <%=f.text_field :duration %>
+  </p>
+  <p>
+    <%=f.label :image_file_name %><br>
+    <%=f.text_field :image_file_name, size:30, placeholder: "*.png, *.jpg, *.gif" %>
+  </p>
+  <p>
     <%= f.submit %>
   </p>
 <% end %>
