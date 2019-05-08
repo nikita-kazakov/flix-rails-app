@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flix</title>
+    <title>Super-Heroic Flix</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <%=render 'layouts/header' %>
+    <%=render 'layouts/sidebar' %>
     <%= yield %>
+    <%=render 'layouts/footer' %>
   </body>
 </html>
