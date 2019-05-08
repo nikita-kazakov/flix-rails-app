@@ -1,0 +1,29 @@
+$primary-color: #237CBE;
+$secondary-color: #F0F0F0;
+
+header#page-header {
+  color: $secondary-color;
+  background: $primary-color;
+  padding: 5px;
+  border-bottom: 5px solid darken($primary-color, 25%);
+
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+}
+
+footer#page-footer {
+  color: $primary-color;
+  background: $secondary-color;
+  text-align: center;
+  padding: 5px;
+  border-top: 5px solid darken($secondary-color, 25%);
+}
+
+aside#sidebar {
+  float: right;
+  background: $secondary-color;
+  width: 200px;
+}
