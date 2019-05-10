@@ -1,0 +1,11 @@
+<% if @movie.errors.any? %>
+
+  <p>OOPS! There are <%=pluralize(@movie.errors.count, "error")%>:</p>
+
+  <ul>
+    <%=@movie.errors.full_messages.each do |message| %>
+      <li><%=message %></li>
+    <%end %>
+  </ul>
+
+<%end %>

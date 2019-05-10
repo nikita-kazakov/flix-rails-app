@@ -1,4 +1,7 @@
 <%= form_for(@movie) do |f| %>
+
+  <%=render 'shared/errors' %>
+
   <p>
     <%= f.label :title %><br/>
     <%= f.text_field :title, autofocus: true %>
