@@ -11,6 +11,11 @@
   <body>
     <%=render 'layouts/header' %>
     <%=render 'layouts/sidebar' %>
+
+    <%if flash[:notice] %>
+      <p class="flashnk"><%=flash[:notice] %></p>
+    <%end %>
+
     <%= yield %>
     <%=render 'layouts/footer' %>
   </body>
