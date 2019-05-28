@@ -1,0 +1,9 @@
+<h1>Reviews for <%=link_to @movie.title, @movie %></h1>
+
+<%@reviews.each do |review| %>
+  <strong>Name:</strong><%=review.name %> <br>
+  <strong>Stars:</strong><%=review.stars %> <br>
+  <strong>Comment:</strong><%=review.comment %> <br>
+  <%= time_ago_in_words(review.created_at) %> ago
+<% end %>
+

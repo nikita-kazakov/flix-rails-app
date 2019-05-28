@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :reviews
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root "movies#index"
@@ -13,6 +12,10 @@ Rails.application.routes.draw do
   #get 'flashdrives/:id' => 'flashdrives#show'
 
   #This is the fast way of having rails DEFINE ALL THE ROUTES for you.
-  resources :movies
+
+  #Nesting reviews WITHIN movies
+  resources :movies do
+    resources :reviews
+  end
 
 end
