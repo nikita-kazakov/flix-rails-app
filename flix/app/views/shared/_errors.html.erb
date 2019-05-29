@@ -1,9 +1,9 @@
-<% if @movie.errors.any? %>
+<% if object.errors.any? %>
 
-  <p>OOPS! There are <%=pluralize(@movie.errors.count, "error")%>:</p>
+  <p>OOPS! There are <%=pluralize(object.errors.count, "error")%>:</p>
 
   <ul>
-    <%=@movie.errors.full_messages.each do |message| %>
+    <%=object.errors.full_messages.each do |message| %>
       <li><%=message %></li>
     <%end %>
   </ul>

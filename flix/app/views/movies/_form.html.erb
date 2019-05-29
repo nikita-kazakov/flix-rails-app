@@ -1,6 +1,6 @@
 <%= form_for(@movie) do |f| %>
 
-  <%=render 'shared/errors' %>
+  <%=render 'shared/errors', object: @movie %>
 
   <p>
     <%= f.label :title %><br/>

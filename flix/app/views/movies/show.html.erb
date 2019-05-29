@@ -9,6 +9,7 @@
 <strong>Director: </strong><%=@movie.director%><br>
 <strong>Duration: </strong><%=@movie.duration%><br>
 <strong><%= link_to "All Movies", root_path %></strong> |
+<%=link_to "Write a Review", new_movie_review_path(@movie) %> |
 <%=link_to "Reviews", movie_reviews_path(@movie) %> |
 <%=link_to "Edit Movie", edit_movie_path(@movie) %> |
 <%=link_to "Delete Movie", movie_path, method: :delete, data:{confirm:"Are you sure?"} %>
