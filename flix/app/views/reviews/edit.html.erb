@@ -1,0 +1,26 @@
+<h1>Editing <%=@movie.reviews.name %> Review for <%=@movie.title %> </h1>
+
+<%=form_for([@movie, @review]) do |f| %>
+  <%=render 'shared/errors', object: @review %>
+
+  <ol>
+    <li>
+      <%=f.label :name %>
+      <%=f.text_field :name %>
+    </li>
+
+    <li>
+      <%=f.label :stars %>
+      <%=f.select :stars, Review::STARS, prompt: "Pick stars" %>
+    </li>
+
+    <li>
+      <%=f.label :comment %>
+      <%=f.text_area :comment %>
+    </li>
+
+    <%=f.submit 'Post Review' %> |
+    <%=link_to 'Cancel', movie_path(@movie) %>
+  </ol>
+
+<%end %>

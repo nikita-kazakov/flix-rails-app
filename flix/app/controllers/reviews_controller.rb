@@ -26,5 +26,18 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @movie = Movie.find(params[:movie_id])
+    @review = @movie.reviews.find(params[:id])
+  end
+
+  def update
+
+    @movie = Movie.find(params[:movie_id])
+    @review = @movie.reviews.find(params[:id])
+    @review.update(params.require(:review).permit(:name, :stars, :comment))
+
+  end
+
 
 end
