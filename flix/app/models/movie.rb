@@ -14,7 +14,8 @@ class Movie < ApplicationRecord
 
 
   def flop?
-    self.total_gross.blank? || self.total_gross < 50000000
+    #self.total_gross.blank? || self.total_gross < 50000000
+    reviews.count < 3
   end
 
   def self.released
