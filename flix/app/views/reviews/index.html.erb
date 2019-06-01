@@ -5,7 +5,8 @@
   <strong>Stars:</strong><%=review.stars %> <br>
   <strong>Comment:</strong><%=review.comment %> <br>
   <%= time_ago_in_words(review.created_at) %> ago
-  <%=link_to "Edit Review", edit_movie_review_path(@movie, review) %>
+  <%=link_to "Edit Review", edit_movie_review_path(@movie, review) %> |
+  <%=link_to "Delete Review", movie_review_path(@movie, review), method: :delete %>
   <br>
   <br>
 <% end %>
