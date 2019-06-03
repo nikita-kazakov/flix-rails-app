@@ -3,24 +3,25 @@
 <%=form_for([@movie, @review]) do |f| %>
   <%=render 'shared/errors', object: @review %>
 
-  <ol>
-    <li>
+  <form>
+    <div class="form-group">
       <%=f.label :name %>
-      <%=f.text_field :name %>
-    </li>
+      <%=f.text_field :name, class:"form-control" %>
+    </div>
 
-    <li>
+    <div class="form-group">
       <%=f.label :stars %>
-      <%=f.select :stars, Review::STARS, prompt: "Pick stars" %>
-    </li>
+      <%=f.select :stars, Review::STARS, prompt: "Pick stars", class: "form-control" %>
+    </div>
 
-    <li>
+    <div class="form-group">
       <%=f.label :comment %>
-      <%=f.text_area :comment %>
-    </li>
+      <%=f.text_area :comment, class:"form-control" %>
+    </div>
 
-    <%=f.submit 'Post Review' %> |
-    <%=link_to 'Cancel', movie_path(@movie) %>
-  </ol>
+    <%=f.submit 'Post Review', class:"btn btn-primary mr-2" %>
+    <%=link_to 'Cancel', movie_path(@movie), class:"btn btn-primary" %>
+
+  </form>
 
 <%end %>
