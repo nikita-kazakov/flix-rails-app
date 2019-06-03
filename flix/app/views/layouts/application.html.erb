@@ -10,13 +10,27 @@
 
   <body>
     <%=render 'layouts/header' %>
-    <%=render 'layouts/sidebar' %>
 
     <%if flash[:notice] %>
       <p class="flashnk"><%=flash[:notice] %></p>
     <%end %>
 
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <div class="sidebar col-3">
+          <%=render 'layouts/sidebar' %>
+        </div>
+        <div class="main col-9">
+
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
     <%=render 'layouts/footer' %>
   </body>
 </html>

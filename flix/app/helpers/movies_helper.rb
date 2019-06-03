@@ -11,9 +11,9 @@ module MoviesHelper
 
   def image_for(movie)
     if movie.image_file_name.blank?
-      image_tag('placeholder.jpg')
+      image_tag('placeholder.jpg', class: "d-flex mr-3")
     else
-      image_tag (movie.image_file_name)
+      image_tag(movie.image_file_name, class: "d-flex mr-3")
     end
   end
 

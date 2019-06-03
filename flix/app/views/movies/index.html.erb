@@ -1,10 +1,44 @@
+<% @movies.each do |movie| %>
+  <div class="media mb-5">
+    <%= image_for(movie)%>
+    <div class="media-body">
+      <h5 class="display-4 mt-0"><%=movie.title %></h5>
+      <table class="table table-sm">
+        <thead>
+        </thead>
+        <tbody>
+        <tr>
+          <th>Description</th>
+          <td><%= truncate(movie.description, length: 40, separator: ' ') %> </td>
+        </tr>
+        <tr>
+          <th>Released</th>
+          <td><%= movie.released_on %> (<%=time_ago_in_words(movie.released_on) %> ago)</td>
+        </tr>
+        <tr>
+          <th>Rating</th>
+          <td><%= movie.rating %></td>
+        </tr>
+        <tr>
+          <th>Total Gross</th>
+          <td><%= format_total_gross(movie) %></td>
+        </tr>
+        <tr>
+          <th>Reviews</th>
+          <td>#</td>
+        </tr>
+        </tbody>
+      </table>
 
-<div class="container">
-  <div class="jumbotron">
-    <h1 class="">Movie Reviews</h1>
-
+      <div class="btn-group" role="group">
+        <%= link_to "Details", movie_path(movie.id), class:"btn btn-primary" %>
+      </div>
+    </div>
   </div>
-</div>
+<%end %>
+
+
+<h1 class=""></h1>
 
 <h1><%=pluralize(@movies.count, 'Movie')%></h1>
 <%=link_to "Add New Movie", new_movie_path %>
