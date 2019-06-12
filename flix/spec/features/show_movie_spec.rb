@@ -16,6 +16,7 @@ describe 'Viewing individual movies' do
     expect(page).to have_text(movie1.rating)
     expect(page).to have_text(movie1.director)
     expect(page).to have_text(movie1.duration)
+    expect(page).to have_text(movie1.duration)
     #expect(page).to have_text(movie1.total_gross)
     #add average ratings
 
