@@ -30,11 +30,21 @@ describe 'viewing list of movies' do
     expect(page).to have_text(movie2.title)
     expect(page).to have_text(movie3.title)
     expect(page).to have_content("Iron Man")
-
     expect(page).to have_text(movie1.rating)
     #At least the first 10 characters of description
     expect(page).to have_text(movie1.description[0..10])
     expect(page).to have_text(movie1.released_on)
+
+  end
+
+
+  it 'shows future releases' do
+    movie_unreleased = Movie.create(movie_attributes(released_on: 1.month.from_now))
+    movie_released = Movie.create(movie_attributes(title:"FASTMOVIE", released_on: 1.month.ago))
+
+    visit future_releases_url
+    expect(page).to have_content(movie_unreleased.title)
+    expect(page).not_to have_text(movie_released.title)
 
   end
 
