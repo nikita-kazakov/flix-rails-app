@@ -14,12 +14,16 @@ class Movie < ApplicationRecord
 
 
   def flop?
-    #self.total_gross.blank? || self.total_gross < 50000000
-    reviews.count < 3
+    self.total_gross.blank? || self.total_gross < 50000000
+    #reviews.count < 3
   end
 
   def self.released
     where("released_on <= ?", Time.now).order("released_on desc")
+  end
+
+  def self.future_releases
+    where("released_on >= ?", Time.now).order("released_on desc")
   end
 
   #This method lists most recently added movies.
