@@ -5,7 +5,6 @@ describe 'When creating Movie' do
   it 'saves the movie and shows its details ' do
     visit new_movie_path
     expect(current_path).to eq(new_movie_path)
-
     fill_in "Title", with:"New Movie Title"
     fill_in "Description", with: "This superhero saves the world 50 times over and he loves it."
     select "PG-13", from: "Rating"
@@ -15,11 +14,21 @@ describe 'When creating Movie' do
     fill_in "Director", with: "Cool Director"
     fill_in "Duration", with: "120"
     fill_in "Image file name", with: "movie.png"
-
     click_button "Create Movie"
-
     expect(current_path).to eq(movies_path)
     expect(page).to have_text("New Movie Title")
+    expect(page).to have_text("Movie Created!")
+  end
+
+  it 'does not save movie if invalid' do
+
+    visit new_movie_url
+    click_button "Create Movie"
+    expect{click_button 'Create Movie'}.not_to change(Movie, :count)
+
+    expect(current_path).to eq(movies_path)
+    expect(page).to have_text('errors')
+
   end
 
 
