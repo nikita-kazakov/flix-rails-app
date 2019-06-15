@@ -19,9 +19,17 @@ module MoviesHelper
 
   def format_average_stars(movie)
     if movie.average_stars.nil?
-      content_tag(:span, "No reviews")
+      content_tag(:span, "No Reviews")
     else
       pluralize(number_with_precision(movie.average_stars, precision: 1) , 'star')
+    end
+  end
+
+  def number_of_reviews(movie)
+    if movie.reviews.any?
+      movie.reviews.count
+    else
+      "No Reviews".html_safe
     end
   end
 

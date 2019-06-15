@@ -37,7 +37,7 @@ class MoviesController < ApplicationController
     #movie_params = params.require(:movie).permit(:title, :description, :rating, :released_on, :total_gross)
     @movie = Movie.create(movie_params)
     if @movie.save
-      redirect_to movies_path
+      redirect_to movie_path(@movie), notice: "Movie Created!"
     else
       render :new
     end
@@ -46,7 +46,7 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
-    redirect_to movies_path
+    redirect_to movies_path, notice: "Movie Deleted."
   end
 
   #Let's make the movie_params a private method to DRY code.
