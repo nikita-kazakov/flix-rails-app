@@ -11,9 +11,7 @@
   <body>
     <%=render 'layouts/header' %>
 
-    <%if flash[:notice] %>
-      <p class="flashnk"><%=flash[:notice] %></p>
-    <%end %>
+
 
     <div class="container">
       <div class="row">
@@ -21,6 +19,9 @@
           <%=render 'layouts/sidebar' %>
         </div>
         <div class="main col-9">
+          <%if flash[:notice] %>
+            <div class="alert alert-success"><%=flash[:notice] %></div>
+          <%end %>
           <%= yield %>
         </div>
       </div>

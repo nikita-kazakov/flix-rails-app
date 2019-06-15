@@ -1,11 +1,14 @@
 <% if object.errors.any? %>
 
-  <p>OOPS! There are <%=pluralize(object.errors.count, "error")%>:</p>
+  <div class="alert alert-danger">
+    You have <%=pluralize(object.errors.count, 'error')%>:
 
-  <ul>
-    <%=object.errors.full_messages.each do |message| %>
-      <li><%=message %></li>
-    <%end %>
-  </ul>
+    <ul>
+      <%object.errors.full_messages.each do |message| %>
+        <li><%= message%></li>
+      <%end %>
+    </ul>
+  </div>
+
 
 <%end %>

@@ -3,43 +3,55 @@
 
   <%=render 'shared/errors', object: @movie %>
 
-  <p>
-    <%= f.label :title %><br/>
-    <%= f.text_field :title, autofocus: true %>
-  </p>
-  <p>
-    <%= f.label :description %><br/>
-    <%= f.text_area :description, cols: 40, rows: 7 %>
-  </p>
-  <p>
-    <%= f.label :rating %><br/>
-    <%= f.select :rating, Movie::RATINGS, prompt: "Pick One"%>
-  </p>
-  <p>
-    <%= f.label :released_on %><br/>
-    <%= f.date_select :released_on %>
-  </p>
-  <p>
-    <%= f.label :total_gross %><br/>
-    <%= f.number_field :total_gross %>
-  </p>
-  <p>
-    <%=f.label :cast %><br>
-    <%=f.text_field :cast %>
-  </p>
-  <p>
-    <%=f.label :director %><br>
-    <%=f.text_field :director %>
-  </p>
-  <p>
-    <%=f.label :duration %> <br>
-    <%=f.text_field :duration %>
-  </p>
-  <p>
-    <%=f.label :image_file_name %><br>
-    <%=f.text_field :image_file_name, size:30, placeholder: "*.png, *.jpg, *.gif" %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+
+    <div class="form-group">
+      <%=f.label :title %>
+      <%=f.text_field :title, class:"form-control", autofocus: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class:"form-control"%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :rating %><br>
+      <%= f.select :rating, Movie::RATINGS, class:"form-control", prompt: "Pick One"%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :released_on %><br>
+      <%= f.date_select :released_on, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :total_gross %>
+      <%= f.number_field :total_gross, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%=f.label :cast %>
+      <%=f.text_field :cast, class:"form-control" %>
+    </div>
+
+
+    <div class="form-group">
+      <%=f.label :director %>
+      <%=f.text_field :director, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%=f.label :duration %>
+      <%=f.text_field :duration, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%=f.label :image_file_name %><br>
+      <%=f.text_field :image_file_name, placeholder: "*.png, *.jpg, *.gif" %>
+    </div>
+
+    <%=f.submit class:"btn btn-primary mr-2" %>
+
+
+
 <% end %>
