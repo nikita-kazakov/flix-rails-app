@@ -48,4 +48,13 @@ describe 'viewing list of movies' do
 
   end
 
+  it 'show correct number of reviews for each movie' do
+    movie = Movie.create(movie_attributes)
+    review = movie.reviews.new(review_attributes)
+    review.save
+    visit movies_url
+    expect(movie.reviews.count).to eq(1)
+  end
+
+
 end
