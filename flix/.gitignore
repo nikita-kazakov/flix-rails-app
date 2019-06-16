@@ -17,5 +17,8 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore .idea folder
+/.idea/*
+
 # Ignore Byebug command history file.
 .byebug_history
