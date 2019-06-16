@@ -37,7 +37,10 @@ class Movie < ApplicationRecord
 
   def recent_reviews
     reviews.order('created_at desc').limit(2)
+  end
 
+  def no_reviews
+    reviews.count == 0
   end
 
 end
