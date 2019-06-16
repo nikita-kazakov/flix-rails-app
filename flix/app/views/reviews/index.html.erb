@@ -1,13 +1,32 @@
 <h1>Reviews for <%=link_to @movie.title, @movie %></h1>
 
+<% if @movie.no_reviews %>
+  <p>Zero Reviews. <%=link_to "Be the first.", new_movie_review_path%></p>
+<%end%>
+
+
 <%@reviews.each do |review| %>
-  <strong>Name:</strong><%=review.name %> <br>
-  <strong>Stars:</strong><%=review.stars %> <br>
-  <strong>Comment:</strong><%=review.comment %> <br>
-  <%= time_ago_in_words(review.created_at) %> ago
-  <%=link_to "Edit Review", edit_movie_review_path(@movie, review) %> |
-  <%=link_to "Delete Review", movie_review_path(@movie, review), method: :delete %>
-  <br>
-  <br>
+
+
+  <ul class="list-group list-group-item flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"><%=review.name %></h5>
+      <small><%=time_ago_in_words(review.created_at)%> ago.</small>
+    </div>
+    <%review.stars.times do %> <i class="fa fa-star fa-fw fa-1x py-1"></i> <%end %>
+    <p class="mb-1"><%=review.comment %></p>
+  </ul>
+
+  <div class="row mt-2">
+    <div class="col">
+      <%=link_to "Edit Review", edit_movie_review_path(@movie, review), class:"btn btn-primary mr-1" %>
+      <%=link_to "Delete Review", movie_review_path(@movie, review), method: :delete, class:"btn btn-primary mr-1" %>
+    </div>
+  </div>
+  <div class="m-5">
+
+
+  </div>
+
 <% end %>
 
