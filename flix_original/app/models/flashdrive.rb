@@ -1,2 +1,0 @@
-class Flashdrive < ApplicationRecord
-end
