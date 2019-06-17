@@ -1,4 +1,29 @@
-# Flix App
+# README
 
-Deployed App: https://flix-app-rails.herokuapp.com (wait 10 seconds to load).  
-Flix is a movie database and movie review application built using Ruby on Rails 5.0.  
+
+
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+*Git won't source control sqlite.
