@@ -1,10 +1,11 @@
 # Flix App
-Flix is a movie database and movie review app built using Ruby on Rails 5.0. It allows the user to browse existing movies and to create new movies in the database. Users can read listed reviews for each movie and create their own reviews.
+Flix is a movie database and review app built using Ruby on Rails 5.0. It allows the user to browse existing movies and create new movies in the database. Users can read listed reviews for each movie and create their own reviews.
 
 # Deloyed Application
 
-[https://flix-app-rails.herokuapp.com](https://flix-app-rails.herokuapp.com)  
-(Deployed to Heroku, please wait 10 seconds to load).
+Deployed to Heroku, please wait 10 seconds to load:  
+[https://flix-app-rails.herokuapp.com](https://flix-app-rails.herokuapp.com)
+
 
 
 Video of Flix App  (60 seconds):  
@@ -18,13 +19,13 @@ Clone Flix App Repository
 
   
 
-Change terminal directory to _flix-rails-app_
+Change terminal directory to flix-rails-app_
 
 `cd flix-rails-app`
 
   
 
-Bundle install required Ruby gems but without production gems.
+Bundle install required Ruby gems without production gems.
 
 `bundle install --without production`
 
@@ -60,7 +61,7 @@ You’ll see the index page.
 
 # Running Tests
 
-Rspec and Capybara are used for testing. Change to the spec directory in the terminal.
+Rspec and Capybara are used for testing.
 
 `cd flix-rails-app/spec`
 
