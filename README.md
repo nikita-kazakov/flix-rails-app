@@ -3,11 +3,11 @@ Flix is a movie database and movie review app built using Ruby on Rails 5.0. It 
 
 # Deloyed Application
 
-[https://flix-app-rails.herokuapp.com](https://flix-app-rails.herokuapp.com)
+[https://flix-app-rails.herokuapp.com](https://flix-app-rails.herokuapp.com)  
 (Deployed to Heroku, please wait 10 seconds to load).
 
 
-Video of Flix App  (60 seconds):
+Video of Flix App  (60 seconds):  
 [https://youtu.be/QfWv7L_xgxk](https://youtu.be/QfWv7L_xgxk)
 
 # Getting Started
