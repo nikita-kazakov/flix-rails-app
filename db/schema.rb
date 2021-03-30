@@ -10,41 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190528193512) do
+ActiveRecord::Schema.define(version: 2019_05_28_193512) do
 
-  create_table "flashdrives", force: :cascade do |t|
-    t.string   "model"
-    t.string   "color"
-    t.integer  "size"
-    t.decimal  "price"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
-  create_table "movies", force: :cascade do |t|
-    t.string   "title"
-    t.string   "rating"
-    t.decimal  "total_gross"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.text     "description"
-    t.date     "released_on"
-    t.string   "cast"
-    t.string   "director"
-    t.string   "duration"
-    t.string   "image_file_name", default: ""
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "stars"
-    t.text     "comment"
-    t.integer  "movie_id"
+  create_table "movies", id: :serial, force: :cascade do |t|
+    t.string "title"
+    t.string "rating"
+    t.decimal "total_gross"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "location"
+    t.text "description"
+    t.date "released_on"
+    t.string "cast"
+    t.string "director"
+    t.string "duration"
+    t.string "image_file_name", default: ""
+  end
+
+  create_table "reviews", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.integer "stars"
+    t.text "comment"
+    t.integer "movie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "location"
     t.index ["movie_id"], name: "index_reviews_on_movie_id"
   end
 
+  add_foreign_key "reviews", "movies"
 end
