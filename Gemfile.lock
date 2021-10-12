@@ -107,7 +107,8 @@ GEM
     pg (1.2.3)
     popper_js (1.16.0)
     public_suffix (4.0.6)
-    puma (3.12.6)
+    puma (4.3.9)
+      nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -214,7 +215,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   pg
-  puma (~> 3.0)
+  puma (~> 4.3)
   rails (~> 5.2.5)
   rspec-rails (= 3.5.0.beta3)
   sassc-rails
